@@ -1,64 +1,64 @@
-name: Bug Report
-description: File a bug report.
+name: "🐞 Bug Report"
+description: Laporkan bug atau error yang kamu temukan di project ini.
 title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - septianyudhiwicaksono
+labels: ["bug"]
+assignees: [septianyudhiwicaksono]
+
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Terima kasih sudah bantu ngecek project ini 🙏  
+        Tolong isi laporan bug di bawah dengan detail biar bisa cepat ditangani.
+
   - type: input
-    id: contact
+    id: bug_summary
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+      label: "🧩 Ringkasan Bug"
+      description: Jelaskan singkat apa masalahnya.
+      placeholder: "Contoh: Tombol login gak bisa diklik"
+
   - type: textarea
-    id: what-happened
+    id: steps
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      label: "🪜 Langkah untuk Mereproduksi"
+      description: Urutan langkah agar bug ini bisa direproduksi.
+      placeholder: "Penjelasan Detail"
+
   - type: textarea
-    id: logs
+    id: expected
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
+      label: "✅ Perilaku yang Diharapkan"
+      description: Apa yang seharusnya terjadi?
+      placeholder: "Setelah klik tombol login, user diarahkan ke dashboard"
+
+  - type: dropdown
+    id: severity
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
+      label: "🔥 Tingkat Keparahan"
       options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+        - Rendah
+        - Sedang
+        - Tinggi
+        - Kritis
+
+  - type: input
+    id: environment
+    attributes:
+      label: "💻 Lingkungan Sistem"
+      description: Detail sistem tempat bug muncul.
+      placeholder: "Windows 11 / Chrome 120 / App v1.2.3"
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "📸 Bukti / Screenshot"
+      description: Upload screenshot atau log error (jika ada).
+      placeholder: "Seret & lepaskan file di sini"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "📝 Catatan Tambahan"
+      description: Info lain yang bisa bantu tim memahami bug.
+      placeholder: "Misal: bug hanya muncul kalau user belum login"
